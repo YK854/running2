@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    <% if user_signed_in? %>
+    <!--ログインしている場合-->
+      <li><%= link_to "HOMEへ", root_path %></li>
+      <li><%= link_to "booksへ", root_path %></li>
+      <li><%= link_to "userへ", root_path %></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+    <!--ログインしていない場合-->
+      <li><%= link_to "HOMEへ", root_path %></li>
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
+  </ul>
+</nav>

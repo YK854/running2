@@ -1,0 +1,13 @@
+<h4>ユーザー詳細</h4>
+<table>
+  <tr>
+    <th>ユーザーID</th>
+    <th>ユーザー名</th>
+    <th>メールアドレス</th>
+  </tr>
+  <tr>
+    <th><%= link_to @user.id, edit_user_path(@user.id) %></th>
+    <th><%= link_to @user.name, edit_user_path(@user.id) %></th>
+    <th><%= link_to @user.email, edit_user_path(@user.id) %></th>
+  </tr>
+</table>

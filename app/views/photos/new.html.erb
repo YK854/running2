@@ -1,0 +1,17 @@
+  <%= form_with model:@photo, url:photos_path(@photo.id), local:true do |f| %>
+    <div>
+      <%= f.label :image %>
+      <%= f.attachment_field :image %>
+    </div>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :body %>
+      <%= f.text_field :body %>
+    </div>
+    <div>
+      <%= f.submit '保存' %>
+    </div>
+  <% end %>

@@ -1,0 +1,14 @@
+<h4>ユーザー編集</h4>
+  <%= form_with model:@user,url:user_path(@user.id), local:true do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div>
+      <%= f.submit '保存' %>
+    </div>
+  <% end %>
