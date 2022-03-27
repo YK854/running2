@@ -19,3 +19,21 @@
     <th><%= link_to @photo.body, edit_photo_path(@photo.id) %></th>
   </tr>
 </table>
+<h4>コメント投稿</h4>
+<div>
+  <%= form_with(model:[@photo,@photo_com],local:true) do |f| %>
+    <%= f.label :com %>
+    <%= f.text_field :com %>
+    <%= f.submit '送信' %>
+  <% end %>
+</div>
+
+<h4>コメント</h4>
+<div>
+  <% @photo.coms.each do |com| %>
+    <div>
+      <%= com.com %>
+      <%= link_to '削除', photo_com_path(com.photo_id, com.id),method: :delete %>
+    </div>
+  <% end %>
+</div>
