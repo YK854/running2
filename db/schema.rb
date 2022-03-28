@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_27_130221) do
+ActiveRecord::Schema.define(version: 2022_03_28_131855) do
 
   create_table "coms", force: :cascade do |t|
     t.string "com"
+    t.integer "user_id"
+    t.integer "photo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "iines", force: :cascade do |t|
     t.integer "user_id"
     t.integer "photo_id"
     t.datetime "created_at", null: false

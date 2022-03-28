@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :photos, dependent: :destroy
   has_many :coms,dependent: :destroy
+  has_many :iines,dependent: :destroy
 end

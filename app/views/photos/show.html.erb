@@ -6,6 +6,7 @@
     <th>投稿写真</th>
     <th>タイトル</th>
     <th>説明文</th>
+    <th>いいね数</th>
   </tr>
   <tr>
     <th><%= link_to @photo.id, edit_photo_path(@photo.id) %></th>
@@ -17,6 +18,18 @@
     </th>
     <th><%= link_to @photo.title, edit_photo_path(@photo.id) %></th>
     <th><%= link_to @photo.body, edit_photo_path(@photo.id) %></th>
+    <th>
+      <% if @photo.iine_by?(current_user) %>
+
+        <%= link_to photo_iine_path(@photo.id),method: :delete do %>
+          ★ <%= @photo.iines.count %>いいね
+        <% end %>
+      <% else %>
+        <%= link_to photo_iine_path(@photo.id), method: :post do %>
+          ☆ <%= @photo.iines.count %>いいね
+        <% end %>
+      <% end %>
+    </th>
   </tr>
 </table>
 <h4>コメント投稿</h4>
